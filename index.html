@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Knight | Research</title>
+  <meta name="description" content="Michael Knight (Runze Liu) is a PhD researcher at Penn State working on wearable sensing, smart sports, IoT, embedded systems, sensor systems, and computer vision." />
+  <meta name="keywords" content="Michael Knight, Runze Liu, Penn State, wearable sensing, smart sports, IoT, embedded systems, sensor systems, computer vision, sport analytics, smart ring, UbiComp, UIST" />
+  <meta name="author" content="Michael Knight" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://your-github-pages-url.example/" />
+  <meta property="og:title" content="Michael Knight | Research" />
+  <meta property="og:description" content="PhD researcher at Penn State working on wearable sensing, smart sports, IoT, embedded systems, and sensor systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-github-pages-url.example/" />
+  <meta property="og:image" content="https://your-github-pages-url.example/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Michael Knight | Research" />
+  <meta name="twitter:description" content="Wearable sensing, smart sports, IoT, embedded systems, and sensor systems." />
+  <meta name="twitter:image" content="https://your-github-pages-url.example/profile.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michael Knight",
+    "alternateName": "Runze Liu",
+    "jobTitle": "PhD Researcher",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Pennsylvania State University"
+    },
+    "url": "https://your-github-pages-url.example/",
+    "image": "https://your-github-pages-url.example/profile.jpg",
+    "email": "mailto:RML6043@psu.edu",
+    "sameAs": [
+      "https://github.com/KnightR77",
+      "https://orcid.org/0000-0003-2342-1644",
+      "https://sites.psu.edu/rzliu77/"
+    ],
+    "knowsAbout": [
+      "wearable sensing",
+      "smart sports",
+      "Internet of Things",
+      "embedded systems",
+      "sensor systems",
+      "computer vision",
+      "sport analytics",
+      "smart rings"
+    ]
+  }
+  </script>
+  <style>
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f5fbfb;
+      --bg-elev: #ffffff;
+      --bg-soft: #edf6f7;
+      --text: #102326;
+      --text-muted: #4c666b;
+      --border: rgba(28, 90, 98, 0.14);
+      --accent: #5c9fa9;
+      --accent-strong: #3f7f89;
+      --accent-soft: rgba(92, 159, 169, 0.12);
+      --shadow: 0 12px 36px rgba(16, 35, 38, 0.08);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0d1618;
+      --bg-elev: #121e20;
+      --bg-soft: #152326;
+      --text: #e6f3f4;
+      --text-muted: #9bb2b6;
+      --border: rgba(122, 173, 180, 0.16);
+      --accent: #6ea9b2;
+      --accent-strong: #8bc1ca;
+      --accent-soft: rgba(110, 169, 178, 0.14);
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.24);
+    }
+    :root {
+      color-scheme: light dark;
+      --bg: #f5fbfb;
+      --bg-elev: #ffffff;
+      --bg-soft: #edf6f7;
+      --text: #102326;
+      --text-muted: #4c666b;
+      --border: rgba(28, 90, 98, 0.14);
+      --accent: #5c9fa9;
+      --accent-strong: #3f7f89;
+      --accent-soft: rgba(92, 159, 169, 0.12);
+      --shadow: 0 12px 36px rgba(16, 35, 38, 0.08);
+      --maxw: 1140px;
+      --radius: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --bg: #0d1618;
+        --bg-elev: #121e20;
+        --bg-soft: #152326;
+        --text: #e6f3f4;
+        --text-muted: #9bb2b6;
+        --border: rgba(122, 173, 180, 0.16);
+        --accent: #6ea9b2;
+        --accent-strong: #8bc1ca;
+        --accent-soft: rgba(110, 169, 178, 0.14);
+        --shadow: 0 14px 40px rgba(0, 0, 0, 0.24);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(92, 159, 169, 0.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(92, 159, 169, 0.08), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--maxw));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      font-size: 0.96rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent-soft), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--accent-strong);
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .theme-toggle {
+      min-height: 38px;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text-muted);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      color: var(--accent-strong);
+      transform: translateY(-1px);
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .muted-link:hover,
+    .muted-link:focus-visible {
+      color: var(--accent-strong);
+    }
+
+    .hero {
+      padding: 5rem 0 2rem;
+    }
+
+    .hero-main,
+    .section-card {
+      padding: 1.6rem;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 168px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-slot {
+      width: 168px;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      border: 1px dashed var(--border);
+      background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--bg-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      overflow: hidden;
+    }
+
+    .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      margin-bottom: 0.95rem;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 0.95rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      max-width: 68ch;
+    }
+
+    .hero-actions,
+    .tag-row,
+    .inline-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions {
+      margin-top: 1.35rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.78rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #f7fbfb;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    main { padding-bottom: 4rem; }
+    section { padding: 1rem 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+
+    .list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .item {
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .meta,
+    .inline-links {
+      margin-top: 0.45rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .tag-row { margin-top: 1rem; }
+
+    .tag {
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .news-item {
+      padding: 1rem;
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+    }
+
+    .news-item time {
+      display: block;
+      color: var(--accent-strong);
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .muted-link {
+      color: var(--accent-strong);
+    }
+
+    .footer {
+      padding: 2rem 0 3.2rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-slot {
+        width: 148px;
+      }
+
+      .span-12,
+      .span-8,
+      .span-7,
+      .span-6,
+      .span-5,
+      .span-4 {
+        grid-column: span 12;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .theme-toggle {
+        align-self: flex-start;
+      }
+      .nav {
+        padding: 0.85rem 0;
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-main,
+      .section-card {
+        padding: 1.2rem;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">MK</span>
+        <span>Michael Knight</span>
+      </a>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#research">Research</a>
+          <a href="#news">News</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark and light mode" aria-pressed="false">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <article class="card hero-main">
+          <div class="hero-layout">
+            <div class="photo-slot" aria-label="Profile photo placeholder">
+              Put your photo here<br />
+              <span style="font-weight:500; font-size:0.82rem; display:block; margin-top:0.35rem;">replace with &lt;img src=&quot;profile.jpg&quot; alt=&quot;Michael Knight portrait&quot;&gt;</span>
+            </div>
+            <div>
+              <h1>Michael Knight</h1>
+              <p class="lead">
+                I am Michael Knight (Runze Liu), a PhD student and graduate researcher in the Department of Computer Science and Engineering at Pennsylvania State University, advised by Prof. Mahanth Gowda. My research spans wearable sensing, smart sports, IoT, embedded systems, sensor systems, and computer vision.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#publications">Publications</a>
+                <a class="btn btn-secondary" href="https://knightr77.net/cv/cv-sept24.pdf" target="_blank" rel="noreferrer">Download CV</a>
+              </div>
+              <div class="tag-row" aria-label="Research areas">
+                <span class="tag">Wearable Sensing</span>
+                <span class="tag">Smart Sports</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">Sensor Systems</span>
+                <span class="tag">Computer Vision</span>
+              </div>
+              <div class="inline-links">
+                <a class="muted-link" href="mailto:RML6043@psu.edu">Email</a>
+                <a class="muted-link" href="https://github.com/KnightR77" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="muted-link" href="https://orcid.org/0000-0003-2342-1644" target="_blank" rel="noreferrer">ORCID</a>
+                <a class="muted-link" href="https://sites.psu.edu/rzliu77/" target="_blank" rel="noreferrer">PSU Page</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container section-grid">
+        <article class="card section-card span-12">
+          <div class="section-head">
+            <div>
+              <h2>Selected publications</h2>
+              <p>Recent papers and representative projects.</p>
+            </div>
+          </div>
+          <div class="list">
+            <div class="item">
+              <h3><a class="muted-link" href="https://doi.org/10.1145/3743109" target="_blank" rel="noreferrer">FuSenseRing: An Open-Source Platform for Robust Cuffless Blood Pressure Monitoring via Multimodal Sensor Fusion and Temperature-Adaptive Attention</a></h3>
+              <p>Zhenghao Li, Taiting Lu, <strong>Runze Liu</strong>, Shengming Yuan, Jigar Gosalia, Christine Bowlus, David N. Proctor, James A. Pawelczyk, Yincheng Jin, Mahanth Gowda.</p>
+              <div class="meta">ACM IMWUT / UbiComp, 2025</div>
+            </div>
+
+            <div class="item">
+              <h3><a class="muted-link" href="https://dl.acm.org/doi/10.1145/3746027.3755529" target="_blank" rel="noreferrer">Demonstration of VisRing: A Display-Extended Smartring for Nano Visualizations</a></h3>
+              <p><strong>Runze Liu</strong>, Christian Krauter, Taiting Lu, Mara Schulte, Alexander Achberger, Tanja Blascheck, Michael Sedlmair, Mahanth Gowda.</p>
+              <div class="meta">ACM UIST Adjunct, 2025</div>
+            </div>
+
+            <div class="item">
+              <h3><a class="muted-link" href="https://www.cse.psu.edu/~mkg31/papers/VisRing.pdf" target="_blank" rel="noreferrer">VisRing: A Display-Extended Smartring for Nano Visualizations</a></h3>
+              <p>Taiting Lu, Christian Krauter, <strong>Runze Liu</strong>, Mara Schulte, Alexander Achberger, Tanja Blascheck, Michael Sedlmair, Mahanth Gowda.</p>
+              <div class="meta">ACM UIST, 2025</div>
+            </div>
+
+            <div class="item">
+              <h3><a class="muted-link" href="https://doi.org/10.1145/3675094" target="_blank" rel="noreferrer">SmartDampener: An Open Source Platform for Sport Analytics in Tennis</a></h3>
+              <p><strong>Runze Liu</strong>, Taiting Lu, Shengming Yuan, Hao Zhou, Mahanth Gowda.</p>
+              <div class="meta">ACM IMWUT / UbiComp, 2024</div>
+            </div>
+
+            <div class="item">
+              <h3><a class="muted-link" href="https://dl.acm.org/doi/10.1145/3583120.3586976" target="_blank" rel="noreferrer">One Ring to Rule Them All: An Open Source Smartring Platform for Finger Motion Analytics and Healthcare Applications</a></h3>
+              <p>Hao Zhou, Taiting Lu, Yilin Liu, Shijia Zhang, <strong>Runze Liu</strong>, Mahanth Gowda.</p>
+              <div class="meta">ACM/IEEE IoTDI, 2023</div>
+            </div>
+
+            <div class="item">
+              <h3><a class="muted-link" href="https://dl.acm.org/doi/10.1145/3594739" target="_blank" rel="noreferrer">I am an Earphone and I can Hear my Users Face: Facial Landmark Tracking using Smart Earphones</a></h3>
+              <p>Shijia Zhang, Taiting Lu, Hao Zhou, Yilin Liu, <strong>Runze Liu</strong>, Mahanth Gowda.</p>
+              <div class="meta">ACM Transactions on Internet of Things, 2023</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-grid">
+        <article class="card section-card span-8">
+          <div class="section-head">
+            <div>
+              <h2>About</h2>
+              <p>Research focus and academic background.</p>
+            </div>
+          </div>
+          <p>
+            My work focuses on practical sensing systems that move from hardware to human impact. I am interested in wearable and embedded devices that produce actionable feedback in sports, health, and ubiquitous computing settings. Across projects, I work on system design, prototyping, firmware, signal processing, and end-to-end evaluation.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Advisor: Prof. Mahanth Gowda</span>
+            <span class="tag">Department of Computer Science and Engineering</span>
+            <span class="tag">Pennsylvania State University</span>
+          </div>
+        </article>
+
+        <article class="card section-card span-4">
+          <h2>Education</h2>
+          <div class="list">
+            <div class="item">
+              <h3>PhD, Computer Science and Engineering</h3>
+              <p>Pennsylvania State University</p>
+            </div>
+            <div class="item">
+              <h3>M.S., Computer Engineering</h3>
+              <p>Case Western Reserve University, 2020–2022</p>
+            </div>
+            <div class="item">
+              <h3>B.S., Computer Science</h3>
+              <p>University of California Irvine, 2016–2020</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container section-grid">
+        <article class="card section-card span-12">
+          <div class="section-head">
+            <div>
+              <h2>Research</h2>
+              <p>Consolidated keywords across my recent and ongoing work.</p>
+            </div>
+          </div>
+          <div class="tag-row" aria-label="Consolidated research keywords">
+            <span class="tag">Wearable Sensing</span>
+            <span class="tag">Smart Sports</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Sensor Systems</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Circuit Design</span>
+            <span class="tag">Mechanical Prototyping</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Industrial Design</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="container section-grid">
+        <article class="card section-card span-7">
+          <h2>News</h2>
+          <div class="news-list">
+            <div class="news-item">
+              <time>Spring 2026</time>
+              <p>Serving as Teaching Assistant for CS 462: Wireless Security.</p>
+            </div>
+            <div class="news-item">
+              <time>2025</time>
+              <p>Published work at ACM IMWUT / UbiComp and ACM UIST, including VisRing-related research and demonstrations.</p>
+            </div>
+            <div class="news-item">
+              <time>Recent</time>
+              <p>Continuing research on wearable devices, smart sports sensing, compact interfaces, and embedded system prototyping.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card section-card span-5" id="teaching">
+          <h2>Teaching</h2>
+          <div class="list">
+            <div class="item">
+              <h3>Spring 2026</h3>
+              <p>Teaching Assistant — CS 462, Wireless Security</p>
+            </div>
+            <div class="item">
+              <h3>Fall 2025</h3>
+              <p>Teaching Assistant — CSE/EE 559, Wireless and Mobile Sensing in the Age of IoT</p>
+            </div>
+            <div class="item">
+              <h3>Spring 2023</h3>
+              <p>Teaching Assistant — CS 131, Programming and Computation I: Fundamentals</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="mentoring">
+      <div class="container section-grid">
+        <article class="card section-card span-6">
+          <h2>Mentored students</h2>
+          <div class="list">
+            <div class="item">
+              <h3>Yixi Wang</h3>
+              <p>Undergraduate, Pennsylvania State University · 2025–</p>
+            </div>
+            <div class="item">
+              <h3>Hsueh-hung Cheng</h3>
+              <p>Undergraduate, Pennsylvania State University · 2025–</p>
+            </div>
+            <div class="item">
+              <h3>Shengming Yuan</h3>
+              <p>Undergraduate, Pennsylvania State University · 2023–2024</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card section-card span-6">
+          <h2>Other activities</h2>
+          <div class="list">
+            <div class="item">
+              <h3>Co-founder</h3>
+              <p>OmniLab LLC. (佛山市遨梦玄智有限公司), Foshan, Guangdong Province.</p>
+            </div>
+            <div class="item">
+              <h3>Co-founder</h3>
+              <p>Karpos Cultivation LLC., Irvine, California.</p>
+            </div>
+            <div class="item">
+              <h3>Community building</h3>
+              <p>Co-Founder of Computer Hardware Club @ UCI.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-grid">
+        <article class="card section-card span-12">
+          <h2>Contact</h2>
+          <p>I am happy to discuss research, collaboration, and student projects related to wearable sensing, embedded devices, and sports technology.</p>
+          <div class="tag-row">
+            <span class="tag">Email: RML6043@psu.edu</span>
+            <span class="tag">University Park, PA</span>
+            <span class="tag">W362 Westgate Building</span>
+          </div>
+          <div class="inline-links">
+            <a class="muted-link" href="mailto:RML6043@psu.edu">Email</a>
+            <a class="muted-link" href="https://github.com/KnightR77" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="muted-link" href="https://orcid.org/0000-0003-2342-1644" target="_blank" rel="noreferrer">ORCID</a>
+            <a class="muted-link" href="https://knightr77.net/cv/cv-sept24.pdf" target="_blank" rel="noreferrer">CV</a>
+            <a class="muted-link" href="https://sites.psu.edu/rzliu77/" target="_blank" rel="noreferrer">PSU Site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Michael Knight. Built as a flat, responsive single-page academic website for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      root.setAttribute('data-theme', storedTheme);
+    }
+
+    function syncThemeButton() {
+      const activeTheme = root.getAttribute('data-theme');
+      const isDark = activeTheme
+        ? activeTheme === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      themeToggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const resolvedTheme = currentTheme || (prefersDark ? 'dark' : 'light');
+      const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+      syncThemeButton();
+    });
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', () => {
+        if (!root.getAttribute('data-theme')) syncThemeButton();
+      });
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(() => {
+        if (!root.getAttribute('data-theme')) syncThemeButton();
+      });
+    }
+
+    syncThemeButton();
+  </script>
+</body>
+</html>
