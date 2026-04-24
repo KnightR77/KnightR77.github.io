@@ -193,17 +193,9 @@ a {
   width: 168px;
   aspect-ratio: 1 / 1;
   border-radius: 22px;
-  border: 1px dashed var(--border);
-  background: linear-gradient(135deg, var(--accent-soft), transparent 70%), var(--bg-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  font-weight: 600;
+  border: 1px solid var(--border);
   overflow: hidden;
+  position: relative;
 }
 
 .photo-slot img {
@@ -211,6 +203,7 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 22px;
 }
 
 h1, h2, h3 {
