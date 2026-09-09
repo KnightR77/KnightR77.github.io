@@ -653,3 +653,65 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
 :root:not([data-theme]) .btn-primary { background:var(--text); color:var(--bg-elev); border-color:var(--text); }
 :root[data-theme="light"] .btn-primary:hover,
 :root[data-theme="light"] .btn-primary:focus-visible { background:var(--accent-strong); border-color:var(--accent-strong); color:#fff; }
+
+/* Compact news strip. */
+#news {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+#news > h2 {
+  margin-bottom: .45rem;
+  padding-bottom: .25rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  border-bottom: 0;
+}
+#news .list {
+  grid-template-columns: 1fr;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 7rem;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+  touch-action: pan-x;
+  cursor: grab;
+}
+#news .list:active { cursor: grabbing; }
+.news-track { display: grid; gap: 0; will-change: transform; }
+#news .list::-webkit-scrollbar { width: 8px; height: 8px; }
+#news .list::-webkit-scrollbar-track { background: transparent; }
+#news .list::-webkit-scrollbar-thumb { background: transparent; }
+#news .list:hover,
+#news .list:focus,
+#news .list:focus-within { scrollbar-color: var(--accent) var(--bg-soft); }
+#news .list:hover::-webkit-scrollbar-track,
+#news .list:focus::-webkit-scrollbar-track { background: var(--bg-soft); }
+#news .list:hover::-webkit-scrollbar-thumb,
+#news .list:focus::-webkit-scrollbar-thumb { background: var(--accent); }
+#news .item {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: .2rem 0;
+  min-height: 1.75rem;
+  min-width: max-content;
+  white-space: nowrap;
+  border: 0 !important;
+}
+#news .item h3 { font-size: .92rem; margin: 0; }
+#news .item p {
+  grid-column: auto;
+  font-size: .78rem;
+  line-height: 1.35;
+}
+#news .meta { font-size: .68rem; }
+.advisor-link { color: var(--accent-strong); font-weight: 700; }
+.advisor-link:hover,
+.advisor-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 560px) {
+  #news .item { padding: .2rem 0; min-height: 1.75rem; }
+}
