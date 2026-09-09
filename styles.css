@@ -564,6 +564,8 @@ h2 { letter-spacing:-.055em; }
 #publications .item h3 a { font-weight: 800; text-transform: none; }
 #education .item h3 { font-weight: 800; text-transform: none; }
 #teaching .span-6:nth-child(2) .item h3 { font-weight: 800; }
+#awards .item h3 { font-weight: 800; text-transform: none; }
+#awards .award-amount { color: var(--accent-strong); font-weight: 800; }
 .lead { max-width: 74ch; }
 .btn,.tag { border-radius:0; }
 .btn-primary { color:#00131c; }
