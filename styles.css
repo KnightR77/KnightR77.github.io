@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "QiuHongKai";
+  /* src: url("./江西拙楷.ttf") format("truetype");
+   */
+  /* src: url("./演示秋鸿楷.ttf") format("truetype");
+   */
+  /* src: url("./联盟起艺卢帅正锐黑体.ttf") format("truetype"); */
+
+  src: url("./cfont.ttf") format("truetype");
+
+   font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #f5fbfb;
@@ -559,6 +574,18 @@ body {
 h1,h2,h3 { text-transform: uppercase; font-weight: 500; }
 h1 { font-size:clamp(3.2rem,7vw,6.2rem); letter-spacing:-.075em; line-height:.9; }
 h2 { letter-spacing:-.055em; }
+.name-lockup { display:flex; min-width:0; flex-direction:column; align-items:flex-start; gap:.7rem; }
+.name-lockup h1 { margin:0; }
+.chinese-name {
+  color:var(--accent-strong);
+  display:inline-block;
+  font-family:"QiuHongKai",STKaiti,KaiTi,cursive;
+  font-size:clamp(1.8rem,3.15vw,2.7rem);
+  font-weight:normal;
+  line-height:.95;
+  letter-spacing:.04em;
+}
+.hero-content { width:100%; margin-top:2rem; }
 .section-card h2 { font-weight: 800; }
 #publications .item h3,
 #publications .item h3 a { font-weight: 800; text-transform: none; }
@@ -586,9 +613,10 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
   .nav { flex-direction:row; align-items:center; }
   .nav-actions { width:auto; }
   .nav-links { display:none; }
-  .hero-layout { grid-template-columns:1fr; }
-  .photo-slot,.photo-slot img { width:150px; }
-  h1 { font-size:3.5rem; }
+  .hero-layout { grid-template-columns:110px minmax(0,1fr); gap:1.25rem; }
+  .photo-slot,.photo-slot img { width:110px; }
+  h1 { font-size:clamp(2.4rem,12vw,3.5rem); }
+  .chinese-name { font-size:1.65rem; }
 }
 
 /* Approved main color scheme. Keep these overrides last. */
