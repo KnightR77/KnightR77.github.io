@@ -589,6 +589,98 @@ h2 { letter-spacing:-.055em; }
 .section-card h2 { font-weight: 800; }
 #publications .item h3,
 #publications .item h3 a { font-weight: 800; text-transform: none; }
+#publications .item {
+  display:grid;
+  grid-template-columns:101px minmax(0,1fr);
+  column-gap:1.15rem;
+  align-items:start;
+}
+#publications .item::before {
+  content:"IMAGE";
+  grid-column:1;
+  grid-row:1 / span 3;
+  display:grid;
+  width:101px;
+  aspect-ratio:1 / 1;
+  place-items:center;
+  border:1px solid var(--border);
+  background:
+    linear-gradient(135deg,transparent 48%,var(--border) 49%,var(--border) 51%,transparent 52%),
+    linear-gradient(45deg,transparent 48%,var(--border) 49%,var(--border) 51%,transparent 52%),
+    var(--bg-soft);
+  color:var(--text-muted);
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+#publications .item > * { grid-column:2; }
+#publications .publication-iring::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/iring.png") center / contain no-repeat;
+}
+#publications .publication-aquatag::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/aquatag.png") center / contain no-repeat;
+}
+#publications .publication-visring::before {
+  --publication-image:url("./images/publications/visring.png");
+  content:"";
+  border:0;
+  background:transparent var(--publication-image) center / contain no-repeat;
+}
+#publications .publication-visring-demo::before {
+  --publication-image:url("./images/publications/visring_demo.png");
+  content:"";
+  border:0;
+  background:transparent var(--publication-image) center / contain no-repeat;
+}
+#publications .publication-smartdampener::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/smartdampener.png") center / contain no-repeat;
+}
+#publications .publication-omniring::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/omniring.png") center / contain no-repeat;
+}
+#publications .publication-fusensering::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/fusensering.png") center / contain no-repeat;
+}
+#publications .publication-lmm4-ic4k::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/lmm4-ic4k.png") center / contain no-repeat;
+}
+#publications .publication-omnimech::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/omnimech.png") center / contain no-repeat;
+}
+#publications .publication-omnilayout::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/omnilayout.png") center / contain no-repeat;
+}
+#publications .publication-omnirouting::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/omnirouting.png") center / contain no-repeat;
+}
+#publications .publication-omnicad::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/omnicad.png") center / contain no-repeat;
+}
+#publications .publication-earphone-face::before {
+  content:"";
+  border:0;
+  background:transparent url("./images/publications/earphone-face.png") center / contain no-repeat;
+}
 #education .item h3 { font-weight: 800; text-transform: none; }
 #teaching .span-6:nth-child(2) .item h3 { font-weight: 800; }
 #awards .item h3 { font-weight: 800; text-transform: none; }
@@ -617,6 +709,8 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
   .photo-slot,.photo-slot img { width:110px; }
   h1 { font-size:clamp(2.4rem,12vw,3.5rem); }
   .chinese-name { font-size:1.65rem; }
+  #publications .item { grid-template-columns:79px minmax(0,1fr); column-gap:.85rem; }
+  #publications .item::before { width:79px; font-size:.54rem; }
 }
 
 /* Approved main color scheme. Keep these overrides last. */
@@ -678,6 +772,15 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
 :root[data-theme="dark"] .btn-primary:hover { background:#cbb175; }
 :root[data-theme="dark"] .tag { color:#b8a478; border-color:rgba(191,162,100,.25); }
 :root[data-theme="dark"] .photo-slot img { filter:saturate(.72) contrast(1.06); }
+:root[data-theme="dark"] #publications :is(.publication-visring,.publication-visring-demo)::before {
+  filter:brightness(1.14) contrast(.94) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) #publications :is(.publication-visring,.publication-visring-demo)::before {
+    filter:brightness(1.14) contrast(.94) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
+  }
+}
 
 :root[data-theme="light"] .btn-primary,
 :root:not([data-theme]) .btn-primary { background:var(--text); color:var(--bg-elev); border-color:var(--text); }
