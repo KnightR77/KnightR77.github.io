@@ -682,6 +682,34 @@ h2 { letter-spacing:-.055em; }
   background:transparent url("./images/publications/earphone-face.png") center / contain no-repeat;
 }
 #education .item h3 { font-weight: 800; text-transform: none; }
+#education .item {
+  display:grid;
+  grid-template-columns:84px minmax(0,1fr);
+  column-gap:1.15rem;
+  align-items:center;
+}
+#education .item::before {
+  content:"";
+  grid-column:1;
+  grid-row:1 / span 2;
+  display:grid;
+  width:84px;
+  aspect-ratio:1;
+  place-items:center;
+  border:0;
+  background-color:transparent;
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  color:var(--accent-strong);
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.05em;
+}
+#education .item > * { grid-column:2; }
+#education .education-psu::before { background-image:url("./images/schools/psu.png"); }
+#education .education-cwru::before { background-image:url("./images/schools/cwru.png"); }
+#education .education-uci::before { background-image:url("./images/schools/uci.png"); }
 #teaching .span-6:nth-child(2) .item h3 { font-weight: 800; }
 #awards .item h3 { font-weight: 800; text-transform: none; }
 #awards .award-amount { color: var(--accent-strong); font-weight: 800; }
@@ -711,6 +739,8 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
   .chinese-name { font-size:1.65rem; }
   #publications .item { grid-template-columns:79px minmax(0,1fr); column-gap:.85rem; }
   #publications .item::before { width:79px; font-size:.54rem; }
+  #education .item { grid-template-columns:68px minmax(0,1fr); column-gap:.85rem; }
+  #education .item::before { width:68px; font-size:.7rem; }
 }
 
 /* Approved main color scheme. Keep these overrides last. */
@@ -772,13 +802,29 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
 :root[data-theme="dark"] .btn-primary:hover { background:#cbb175; }
 :root[data-theme="dark"] .tag { color:#b8a478; border-color:rgba(191,162,100,.25); }
 :root[data-theme="dark"] .photo-slot img { filter:saturate(.72) contrast(1.06); }
+:root[data-theme="dark"] #education .education-cwru::before { background-image:url("./images/schools/cwru_dark.png"); }
+:root[data-theme="dark"] #education .education-uci::before { background-image:url("./images/schools/uci_dark.png"); }
+:root[data-theme="dark"] #education :is(.education-psu,.education-cwru)::before {
+  filter:brightness(.68) saturate(.9) contrast(1.06);
+}
+:root[data-theme="dark"] #publications .item[class*="publication-"]::before {
+  filter:brightness(.72) saturate(.84) contrast(1.08);
+}
 :root[data-theme="dark"] #publications :is(.publication-visring,.publication-visring-demo)::before {
-  filter:brightness(1.14) contrast(.94) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
+  filter:brightness(.72) saturate(.84) contrast(1.08) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
 }
 
 @media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) #education .education-cwru::before { background-image:url("./images/schools/cwru_dark.png"); }
+  :root:not([data-theme]) #education .education-uci::before { background-image:url("./images/schools/uci_dark.png"); }
+  :root:not([data-theme]) #education :is(.education-psu,.education-cwru)::before {
+    filter:brightness(.68) saturate(.9) contrast(1.06);
+  }
+  :root:not([data-theme]) #publications .item[class*="publication-"]::before {
+    filter:brightness(.72) saturate(.84) contrast(1.08);
+  }
   :root:not([data-theme]) #publications :is(.publication-visring,.publication-visring-demo)::before {
-    filter:brightness(1.14) contrast(.94) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
+    filter:brightness(.72) saturate(.84) contrast(1.08) drop-shadow(0 0 1.5px rgba(191,162,100,.72));
   }
 }
 
