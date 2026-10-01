@@ -684,7 +684,7 @@ h2 { letter-spacing:-.055em; }
 #education .item h3 { font-weight: 800; text-transform: none; }
 #education .item {
   display:grid;
-  grid-template-columns:84px minmax(0,1fr);
+  grid-template-columns:70px minmax(0,1fr);
   column-gap:1.15rem;
   align-items:center;
 }
@@ -693,7 +693,7 @@ h2 { letter-spacing:-.055em; }
   grid-column:1;
   grid-row:1 / span 2;
   display:grid;
-  width:84px;
+  width:70px;
   aspect-ratio:1;
   place-items:center;
   border:0;
@@ -739,8 +739,8 @@ main > section:nth-of-type(even)::before { content:""; position:absolute; inset:
   .chinese-name { font-size:1.65rem; }
   #publications .item { grid-template-columns:79px minmax(0,1fr); column-gap:.85rem; }
   #publications .item::before { width:79px; font-size:.54rem; }
-  #education .item { grid-template-columns:68px minmax(0,1fr); column-gap:.85rem; }
-  #education .item::before { width:68px; font-size:.7rem; }
+  #education .item { grid-template-columns:56px minmax(0,1fr); column-gap:.85rem; }
+  #education .item::before { width:56px; font-size:.7rem; }
 }
 
 /* Approved main color scheme. Keep these overrides last. */
